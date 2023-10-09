@@ -43,11 +43,11 @@ class Planets(BaseSW):
     rotation_period= Column (Integer)
     orbital_period= Column (Integer)
 
-class Starships(BaseSW):
-    __tablename__ = 'starships'
+class Vehicles(BaseSW):
+    __tablename__ = 'Vehicles'
     id = Column (Integer, primary_key=True)
     name= Column (String(100))
-    starship_class= Column (String(100))
+    vehicles_class= Column (String(100))
     model= Column (String(100))
     length= Column (Integer)
 
@@ -57,11 +57,11 @@ class Favorites(BaseSW):
     user_id = Column(Integer, ForeignKey('user.id'))
     characters_id = Column(Integer, ForeignKey('characters.id'))
     planets_id = Column(Integer, ForeignKey('planets.id'))
-    starships_id =Column(Integer, ForeignKey('starships'))  
+    Vehicles_id =Column(Integer, ForeignKey('vehicles'))  
     user = relationship(User)
     characters = relationship(Characters)
     planets = relationship(Planets)
-    starships = relationship(Starships)
+    Vehicles = relationship(Vehicles)
        
 
 
